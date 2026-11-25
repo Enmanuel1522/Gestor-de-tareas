@@ -6,3 +6,5 @@
 - GET /tasks/:id → obtiene una tarea por id
 
 - PUT /tasks/:id → actualiza una tarea (title, description, completed)
+
+- DELETE /tasks/:id → elimina una tarea
