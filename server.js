@@ -64,6 +64,19 @@ app.put('/tasks/:id', (req, res) => {
 });
 
 
+// DELETE: eliminar una tarea
+app.delete('/tasks/:id', (req, res) => {
+  const index = tasks.findIndex(t => t.id === parseInt(req.params.id));
+
+  if (index === -1) {
+    return res.status(404).json({ message: 'Tarea no encontrada' });
+  }
+
+  tasks.splice(index, 1);
+  res.json({ message: 'Tarea eliminada correctamente' });
+});
+
+
 const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`Servidor en http://localhost:${PORT}`);
