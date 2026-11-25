@@ -8,3 +8,13 @@
 - PUT /tasks/:id → actualiza una tarea (title, description, completed)
 
 - DELETE /tasks/:id → elimina una tarea
+
+
+## Validaciones
+- title: obligatorio al crear, texto de 1 a 100 caracteres
+
+- description: debe ser texto
+
+- completed: debe ser true o false
+
+- Los datos inválidos devuelven error 400
