@@ -18,3 +18,7 @@
 - completed: debe ser true o false
 
 - Los datos inválidos devuelven error 400
+
+
+## Frontend
+Abre http://localhost:3000 con el servidor en marcha para usar la interfaz web.
