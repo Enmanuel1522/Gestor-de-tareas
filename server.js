@@ -46,6 +46,24 @@ app.get('/tasks/:id', (req, res) => {
 });
 
 
+// UPDATE: actualizar una tarea
+app.put('/tasks/:id', (req, res) => {
+  const task = tasks.find(t => t.id === parseInt(req.params.id));
+
+  if (!task) {
+    return res.status(404).json({ message: 'Tarea no encontrada' });
+  }
+
+  const { title, description, completed } = req.body;
+
+  if (title !== undefined) task.title = title;
+  if (description !== undefined) task.description = description;
+  if (completed !== undefined) task.completed = completed;
+
+  res.json(task);
+});
+
+
 const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`Servidor en http://localhost:${PORT}`);
